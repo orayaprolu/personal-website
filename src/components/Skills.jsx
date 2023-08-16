@@ -7,7 +7,7 @@ import "react-multi-carousel/lib/styles.css";
 import skill_1 from '../assets/images/meter1.svg'
 import skill_2 from '../assets/images/meter2.svg'
 import skill_3 from '../assets/images/meter3.svg'
-import colorSharp from '../assets/images/color-sharp.png'
+import bg from '../assets/images/bg.jpg'
 
 export const Skills = () => {
     const responsive = {
@@ -35,32 +35,32 @@ export const Skills = () => {
                     <Col>
                         <div className="skill-bx">
                             <h2>
-                                Skills
+                                Technical Skills
                             </h2>
-                            <p>aklsjda sdjakldajdlk adjkl ajsdkl ajdsl aksdj ald</p>
+                            <p>Programming Languages, Framework, and Platforms I am experienced in</p>
                             <Carousel responsive={responsive} infinite className="skill-slider">
                                 <div className="item">
                                     <img src={skill_1} alt='Image1'/>
-                                    <h5>Skill 1</h5>
+                                    <h5>Java</h5>
                                 </div>
                                 <div className="item">
                                     <img src={skill_2} alt='Imag2'/>
-                                    <h5>Skill 2</h5>
+                                    <h5>Python</h5>
                                 </div>
                                 <div className="item">
                                     <img src={skill_3} alt='Image1'/>
-                                    <h5>Skill 3</h5>
+                                    <h5>C#</h5>
                                 </div>
                                 <div className="item">
                                     <img src={skill_1} alt='Image12'/>
-                                    <h5>Skill 4</h5>
+                                    <h5>React</h5>
                                 </div>
                             </Carousel>
                         </div>
                     </Col>
                 </Row>
             </Container>
-            <img className="background-image-left" src={colorSharp} alt="Imaghhe"/>
+            {/* <img className="background-image" src={bg} alt="Imaghhe"/> */}
         </section>
     )
 }
