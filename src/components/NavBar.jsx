@@ -4,10 +4,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {useState, useEffect} from 'react';
 
-import logo from '../assets/images/logo.svg';
-import navIcon1 from '../assets/images/nav-icon1.svg';
-import navIcon2 from '../assets/images/nav-icon2.svg';
-import navIcon3 from '../assets/images/nav-icon3.svg';
+import logo from '../assets/images/logo.png';
+import navLinkedin from '../assets/images/nav-linkedin.svg';
+import navInstagram from '../assets/images/nav-instagram.svg';
+import navGithub from '../assets/images/nav-github.png';
 
 export const NavBar = () => {
     const [scrolled, setScrolled] = useState(false)
@@ -42,9 +42,9 @@ export const NavBar = () => {
             </Nav>
             <span className='navbar-text'>
                 <div className='social-icon'>
-                    <a href='#'><img src={navIcon1} alt = "" /></a>
-                    <a href='#'><img src={navIcon2} alt = "" /></a>
-                    <a href='#'><img src={navIcon3} alt = "" /></a>
+                    <a href='https://www.linkedin.com/in/ojas-rayaprolu-049325205/'><img src={navLinkedin} alt = "LinkedIn Icon" /></a>
+                    <a href='https://github.com/orayaprolu'><img src={navGithub} alt = "Github Icon" /></a>
+                    <a href='https://www.instagram.com/ojas_rayaprolu/'><img src={navInstagram} alt = "Instagram Icon" /></a>
                 </div>
                 <button className='vvd' onClick={() => console.log('connect')}>
                     <span>Let's Connect!</span>

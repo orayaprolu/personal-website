@@ -4,26 +4,31 @@ import { ProjectCard } from "./ProjectCard";
 
 import projImg1 from '../assets/images/project-img1.png'
 import projImg2 from '../assets/images/project-img2.png'
-import projImg3 from '../assets/images/project-img3.png'
 import colorSharp2 from '../assets/images/color-sharp2.png'
 
 export const Projects = () => {
 
     const projects = [
         {
-            title: "Project 1",
-            description: "This is the first project",
-            imgUrl: projImg1
+            title: "Finviz Sentiment Analyzer",
+            description: [
+                "Developed the Finviz Sentiment Analyzer, leveraging sentiment analysis techniques to evaluate stock news articles on Finviz.",
+                " Employed Python to analyze and determine the stock's media outlook as positive or negative over the past week.",
+                " Crafted an interactive web application using Streamlit for users to access and visualize sentiment data."
+            ],
+            imgUrl: projImg1,
+            githubUrl: "https://github.com/orayaprolu/finvizsentimentanalysis"
         },
         {
-            title: "Project 2",
-            description: "This is the 2st project",
-            imgUrl: projImg2
-        },
-        {
-            title: "Project 1",
-            description: "This is the 3rst project",
-            imgUrl: projImg3
+            title: "This Website!",
+            description: [
+                "Developed using React and bootstrapped with React Bootstrap.",
+                " Crafted a responsive and visually appealing design through meticulous CSS styling and animations.",
+                " Implemented an Express.js backend for the contact form, ensuring seamless message delivery to the inbox."
+            ],            
+            imgUrl: projImg2,
+            githubUrl: "https://github.com/orayaprolu/personal-website"
+            
         },
     ];
 
@@ -32,7 +37,7 @@ export const Projects = () => {
             <Container>
             <Col>
                 <h2>Projects</h2>
-                <p>ajnfakjdlasd lkasdj aljskd alkdsj alksdj alksdj aldksj alskdj aldksj alksd jalksd al d</p>
+                <p>Pet projects that have been completed or are still in progress</p>
                 <Container>
                 <Row>
                     {

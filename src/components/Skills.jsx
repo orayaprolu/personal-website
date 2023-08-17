@@ -4,10 +4,12 @@ import { Col, Container, Row } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import skill_1 from '../assets/images/meter1.svg'
-import skill_2 from '../assets/images/meter2.svg'
-import skill_3 from '../assets/images/meter3.svg'
+import { javaIconUrl, pythonIconUrl, reactIconUrl, expressIconUrl, cssIconUrl, nodejsIconUrl } from '../assets/urls/icons'
 import bg from '../assets/images/bg.jpg'
+import 'devicon/devicon.min.css';
+
+
+
 
 export const Skills = () => {
     const responsive = {
@@ -37,23 +39,31 @@ export const Skills = () => {
                             <h2>
                                 Technical Skills
                             </h2>
-                            <p>Programming Languages, Framework, and Platforms I am experienced in</p>
+                            <p>Programming Languages, Framework, and Platforms</p>
                             <Carousel responsive={responsive} infinite className="skill-slider">
                                 <div className="item">
-                                    <img src={skill_1} alt='Image1'/>
+                                    <img src={javaIconUrl} alt='Java Icon' />
                                     <h5>Java</h5>
                                 </div>
                                 <div className="item">
-                                    <img src={skill_2} alt='Imag2'/>
+                                    <img src={pythonIconUrl} alt='Python Icon'/>
                                     <h5>Python</h5>
                                 </div>
                                 <div className="item">
-                                    <img src={skill_3} alt='Image1'/>
-                                    <h5>C#</h5>
+                                    <img src={reactIconUrl} alt='React Icon'/>
+                                    <h5>React</h5>
                                 </div>
                                 <div className="item">
-                                    <img src={skill_1} alt='Image12'/>
-                                    <h5>React</h5>
+                                    <img src={expressIconUrl} alt='Express Icon'/>
+                                    <h5>Express</h5>
+                                </div>
+                                <div className="item">
+                                    <img src={nodejsIconUrl} alt='NodeJS Icon'/>
+                                    <h5>NodeJS</h5>
+                                </div>
+                                <div className="item">
+                                    <img src={cssIconUrl} alt='CSS Icon'/>
+                                    <h5>CSS</h5>
                                 </div>
                             </Carousel>
                         </div>
@@ -62,5 +72,6 @@ export const Skills = () => {
             </Container>
             {/* <img className="background-image" src={bg} alt="Imaghhe"/> */}
         </section>
+        
     )
 }
