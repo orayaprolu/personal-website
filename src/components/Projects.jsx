@@ -2,9 +2,9 @@ import React from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 
-import projImg1 from '../assets/images/project-img1.png'
-import projImg2 from '../assets/images/project-img2.png'
-import bg from '../assets/images/bg.jpg'
+import projImg1 from '../assets/images/proj-finviz.png'
+import projImg2 from '../assets/images/logo.png'
+import projImg3 from '../assets/images/proj-pricecut.png'
 
 export const Projects = () => {
 
@@ -22,11 +22,22 @@ export const Projects = () => {
         {
             title: "This Website!",
             description: [
-                "Developed using React and bootstrapped with React Bootstrap.",
+                "Developed with React and bootstrapped with React Bootstrap.",
                 " Crafted a responsive and visually appealing design through meticulous CSS styling and animations.",
                 " Implemented an Express.js backend for the contact form, ensuring seamless message delivery to the inbox."
             ],            
             imgUrl: projImg2,
+            githubUrl: "https://github.com/orayaprolu/personal-website"
+            
+        },
+        {
+            title: "Price Cut",
+            description: [
+                "Developed with Unity Game Engine, C#, Standard Assets Package, Blender, and Agile/Scrum Development",
+                " First-person horror game developed in Unity with plot, voice acting, menus, jump-scare animations, and blender character models. Enemy movement based off audio properties in real life such as the user whispering or screaming"
+                
+            ],            
+            imgUrl: projImg3,
             githubUrl: "https://github.com/orayaprolu/personal-website"
             
         },
