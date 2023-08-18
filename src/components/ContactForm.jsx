@@ -16,34 +16,47 @@ export const Contact = () => {
 
     const [formDetails, setFormDetails] = useState(formInitialDetails)
     const [buttonText, setButtonText] = useState('Send')
-    const [status, setStatus] = useState({})
+    const [status, setStatus] = useState({});
+      
 
-    const onFormUpdate = (category, value) => {
+    const onFormUpdate = (category, newValue) => {
         setFormDetails({
             ...formDetails,
-            [category]: value
+            [category]: newValue
         })
     }
 
     const handleSubmit = async(e) => {
         e.preventDefault();
         setButtonText('Sending...')
-        let response = await fetch('http://localhost:5000/contact', {
-            method:'POST',
-            headers: {
-                "Content-Type": "Application/json;charset=utf-8"
-            },
-            body: JSON.stringify(formDetails)
-        })
-        setButtonText("Send")
-        let result = response.json()
-        setFormDetails(formInitialDetails)
-        if (result.code === 200) {
-            setStatus({success: true, message: 'Message sent'})
-        } else {
-            setStatus({success: false, message: 'Something went wrong :('})
-        }
-    }
+        try {
+            let response = await fetch('http://localhost:5001/contact', {
+              method: 'POST',
+              headers: {
+                "Content-Type": "application/json;charset=utf-8"
+              },
+              body: JSON.stringify(formDetails)
+            });
+        
+            console.log('Response Status:', response.status);
+        
+            let result = await response.json();
+            console.log('Result:', result);
+        
+            setFormDetails(formInitialDetails);
+        
+            if (result.code === 200) {
+              setStatus({ success: true, message: 'Message sent' });
+            } else {
+              setStatus({ success: false, message: 'Something went wrong :(' });
+            }
+          } catch (error) {
+            console.error('Error Ojas:', error);
+            setStatus({ success: false, message: 'Error sending the message.' });
+          } finally {
+            setButtonText("Send");
+          }
+        };
 
 
     return (
