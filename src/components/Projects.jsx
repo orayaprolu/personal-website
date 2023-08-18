@@ -4,7 +4,7 @@ import { ProjectCard } from "./ProjectCard";
 
 import projImg1 from '../assets/images/project-img1.png'
 import projImg2 from '../assets/images/project-img2.png'
-import colorSharp2 from '../assets/images/color-sharp2.png'
+import bg from '../assets/images/bg.jpg'
 
 export const Projects = () => {
 
@@ -36,22 +36,23 @@ export const Projects = () => {
         <section className="project" id="project">
             <Container>
             <Col>
-                <h2>Projects</h2>
-                <p>Pet projects that have been completed or are still in progress</p>
-                <Container>
-                <Row>
-                    {
-                        projects.map((project, index) => {
-                            return (
-                                <ProjectCard key = {index} {...project}/>
-                            )
-                        })
-                    }
-                </Row>
-                </Container>
+                <div className="project-bx">
+                    <h2>Projects</h2>
+                    <p>Pet projects that have been completed or are still in progress</p>
+                    <Container>
+                    <Row>
+                        {
+                            projects.map((project, index) => {
+                                return (
+                                    <ProjectCard key = {index} {...project}/>
+                                )
+                            })
+                        }
+                    </Row>
+                    </Container>
+                </div>
             </Col>
             </Container>
-            <img className="background-image-right" src={colorSharp2} alt='asdlasd'></img>
         </section>
     )
 }
