@@ -30,7 +30,7 @@ export const Contact = () => {
         e.preventDefault();
         setButtonText('Sending...')
         try {
-            let response = await fetch('http://localhost:5001/contact', {
+            let response = await fetch('/.netlify/functions/contact', {
               method: 'POST',
               headers: {
                 "Content-Type": "application/json;charset=utf-8"
@@ -45,7 +45,7 @@ export const Contact = () => {
         
             setFormDetails(formInitialDetails);
         
-            if (result.code === 200) {
+            if (response.status === 200) {
               setStatus({ success: true, message: 'Message sent' });
             } else {
               setStatus({ success: false, message: 'Something went wrong :(' });
@@ -91,13 +91,17 @@ export const Contact = () => {
                             <Col className="px-1">
                                 <textarea row='6' value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)}/>
                                 <button type='submit'><span>{buttonText}</span></button>
+                            </Col>    
+                        </Row>
+                        <Row>
+                        {
+                            status.message && 
+                            <Col>
+                                <p className={status.success === false ? "danger" : "success"}>
+                                    {status.message}
+                                </p>
                             </Col>
-                            {
-                                status.message && 
-                                <Col>
-                                    <p> className={status.success === false ? "danger" : "success"}{status.message}</p>
-                                </Col>
-                            }      
+                        }  
                         </Row>
                     </form>
                 </Col>
